@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>실리스칸 MR 자료 | 서울3사업부</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122240;
+    --navy-light: #1a3260;
+    --blue: #1d6fa4;
+    --sky: #3da5d9;
+    --sky-light: #7cc8e8;
+    --gold: #e8a020;
+    --gold-light: #f5c76a;
+    --green: #1e8c5a;
+    --green-light: #27b573;
+    --red-soft: #c0392b;
+    --purple: #6c3483;
+    --teal: #0e7490;
+    --brown: #a04000;
+    --white: #ffffff;
+    --off-white: #f0f5fb;
+    --text-dark: #1a2a40;
+    --text-mid: #445570;
+    --text-light: #8898aa;
+    --border: rgba(61,165,217,0.2);
+    --shadow: 0 8px 40px rgba(10,22,40,0.13);
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans KR', sans-serif; background: var(--off-white); color: var(--text-dark); font-size: 15px; line-height: 1.7; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+    color: var(--white); padding: 60px 40px 50px; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(61,165,217,0.18) 0%, transparent 70%); border-radius: 50%; }
+  .hero::after  { content: ''; position: absolute; bottom: -60px; left: 40%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,160,32,0.12) 0%, transparent 70%); border-radius: 50%; }
+  .hero-badge { display: inline-block; background: rgba(61,165,217,0.25); border: 1px solid rgba(61,165,217,0.5); color: var(--sky-light); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 30px; margin-bottom: 18px; }
+  .hero h1 { font-family: 'Noto Serif KR', serif; font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; position: relative; }
+  .hero h1 span { color: var(--sky); }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.65); font-weight: 300; position: relative; }
+  .hero-meta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; position: relative; }
+  .hero-meta-item { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 13px; color: rgba(255,255,255,0.8); }
+  .hero-meta-item strong { color: var(--gold-light); }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 980px; margin: 0 auto; padding: 0 20px 60px; }
+  .section { margin-top: 50px; }
+  .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .section-num { width: 36px; height: 36px; background: var(--blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--navy); }
+
+  /* ── USP ── */
+  .usp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .usp-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.25s; }
+  .usp-card:hover { transform: translateY(-4px); }
+  .usp-card-header { padding: 22px 26px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+  .usp-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .usp-icon.blue { background: rgba(29,111,164,0.12); }
+  .usp-icon.gold { background: rgba(232,160,32,0.12); }
+  .usp-card-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .usp-card-tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); margin-top: 2px; }
+  .usp-card-body { padding: 18px 26px 22px; }
+  .usp-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+  .usp-item:last-child { margin-bottom: 0; }
+  .usp-dot { width: 6px; height: 6px; background: var(--sky); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+  .usp-item strong { color: var(--text-dark); }
+
+  /* ── LOGIC ── */
+  .logic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .logic-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; }
+  .logic-card-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .compare-table th { background: var(--navy); color: white; padding: 9px 14px; text-align: center; font-weight: 600; font-size: 13px; }
+  .compare-table th:first-child { border-radius: 8px 0 0 0; }
+  .compare-table th:last-child  { border-radius: 0 8px 0 0; }
+  .compare-table td { padding: 10px 14px; text-align: center; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: var(--off-white); }
+  .highlight-row td { color: var(--blue) !important; font-weight: 700 !important; }
+  .same-tag { display: inline-block; background: rgba(30,140,90,0.12); color: var(--green); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; border: 1px solid rgba(30,140,90,0.3); }
+
+  .flow-steps { display: flex; flex-direction: column; gap: 12px; }
+  .flow-step { display: flex; gap: 14px; align-items: flex-start; }
+  .flow-step-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .flow-step-num.init  { background: rgba(232,160,32,0.15); color: var(--gold);  border: 1.5px solid var(--gold); }
+  .flow-step-num.maint { background: rgba(29,111,164,0.12); color: var(--blue); border: 1.5px solid var(--blue); }
+  .flow-step-label      { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 3px; }
+  .flow-step-label.init  { color: var(--gold); }
+  .flow-step-label.maint { color: var(--blue); }
+  .flow-step-text { font-size: 14px; color: var(--text-mid); }
+  .flow-arrow { text-align: center; color: var(--text-light); font-size: 18px; margin: -4px 0 -4px 14px; }
+
+  /* ── RP FILTER ── */
+  .rp-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .filter-btn { padding: 7px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: var(--white); color: var(--text-mid); transition: all 0.2s; }
+  .filter-btn:hover  { border-color: var(--sky); color: var(--blue); }
+  .filter-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  /* ── RP CASES ── */
+  .rp-cases { display: flex; flex-direction: column; gap: 14px; }
+  .rp-case { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1.5px solid transparent; transition: border-color 0.2s; }
+  .rp-case.open   { border-color: var(--sky); }
+  .rp-case.hidden { display: none; }
+
+  .rp-case-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; cursor: pointer; user-select: none; gap: 16px; transition: background 0.2s; }
+  .rp-case-header:hover { background: rgba(61,165,217,0.04); }
+  .rp-case-left { display: flex; align-items: center; gap: 14px; }
+
+  .rp-case-num { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; color: white; }
+  .num-blue   { background: var(--blue); }
+  .num-green  { background: var(--green); }
+  .num-brown  { background: var(--brown); }
+  .num-teal   { background: var(--teal); }
+  .num-ph     { background: #856404; }
+  .num-purple { background: var(--purple); }
+
+  .rp-case-tag   { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px; }
+  .tag-blue   { color: var(--blue); }
+  .tag-green  { color: var(--green); }
+  .tag-brown  { color: var(--brown); }
+  .tag-teal   { color: var(--teal); }
+  .tag-ph     { color: #856404; }
+  .tag-purple { color: var(--purple); }
+
+  .rp-case-title { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .rp-toggle { width: 32px; height: 32px; background: var(--off-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text-mid); transition: transform 0.3s, background 0.2s; flex-shrink: 0; }
+  .rp-case.open .rp-toggle { transform: rotate(180deg); background: var(--sky); color: white; }
+
+  .rp-body { display: none; padding: 0 24px 24px; border-top: 1px solid var(--border); }
+  .rp-case.open .rp-body { display: block; }
+
+  /* ── DIALOGUE ── */
+  .rp-dialogue-wrap { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .rp-turn { display: flex; gap: 10px; }
+  .rp-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+  .rp-avatar.mr { background: rgba(29,111,164,0.10); }
+  .rp-avatar.dr { background: rgba(192,57,43,0.09); }
+  .rp-avatar.ph { background: rgba(133,100,4,0.09); }
+  .rp-bubble { border-radius: 12px; padding: 13px 16px; font-size: 14px; line-height: 1.75; flex: 1; }
+  .rp-bubble.mr { background: rgba(29,111,164,0.07); border: 1px solid rgba(29,111,164,0.2); }
+  .rp-bubble.dr { background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.18); }
+  .rp-bubble.ph { background: rgba(133,100,4,0.06); border: 1px solid rgba(133,100,4,0.18); }
+  .rp-name { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 5px; }
+  .rp-name.mr { color: var(--blue); }
+  .rp-name.dr { color: var(--red-soft); }
+  .rp-name.ph { color: #856404; }
+  .rp-bubble mark { background: rgba(232,160,32,0.28); color: var(--text-dark); border-radius: 3px; padding: 0 3px; font-style: normal; }
+
+  .rp-keypoint { margin-top: 18px; background: linear-gradient(135deg, rgba(10,22,40,0.05), rgba(29,111,164,0.06)); border: 1px solid rgba(29,111,164,0.22); border-left: 4px solid var(--blue); border-radius: 10px; padding: 14px 18px; font-size: 14px; color: var(--text-dark); }
+  .rp-keypoint strong { color: var(--blue); display: block; margin-bottom: 4px; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* ── COMPETITIVE MAP ── */
+  .comp-intro { background: linear-gradient(135deg, rgba(29,111,164,0.08), rgba(61,165,217,0.05)); border: 1px solid rgba(29,111,164,0.2); border-left: 4px solid var(--sky); border-radius: 10px; padding: 13px 18px; font-size: 14px; color: var(--text-mid); margin-bottom: 20px; }
+
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .comp-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .comp-card-header { padding: 16px 20px; }
+  .hdr-godex   { background: linear-gradient(135deg, #1a4f7a, #2171a8); }
+  .hdr-urusa   { background: linear-gradient(135deg, #1a6e3c, #27a05a); }
+  .hdr-legaron { background: linear-gradient(135deg, #7b341e, #c0522c); }
+  .hdr-pennel  { background: linear-gradient(135deg, #4a1f7a, #7b3fb5); }
+  .comp-drug-name { font-size: 20px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+  .comp-drug-sub  { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+  .comp-card-body { padding: 18px 20px; }
+  .comp-moa { font-size: 13px; color: var(--text-mid); background: var(--off-white); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; line-height: 1.6; }
+  .moa-badge { display: inline-block; background: var(--navy); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-right: 6px; letter-spacing: 0.5px; }
+
+  .comp-case-label { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .case-combo  { color: var(--blue); }
+  .case-switch { color: var(--red-soft); }
+
+  .comp-case-desc { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin-bottom: 14px; }
+  .comp-case-desc em { display: block; margin-top: 8px; color: var(--navy); font-style: normal; font-weight: 500; background: rgba(232,160,32,0.1); border-left: 3px solid var(--gold); padding: 6px 10px; border-radius: 0 6px 6px 0; font-size: 13px; }
+
+  .tag-combo  { display: inline-block; background: rgba(29,111,164,0.12); color: var(--blue); font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 20px; border: 1px solid rgba(29,111,164,0.3); }
+  .tag-switch { display: inline-block; background: rgba(192,57,43,0.1); color: var(--red-soft); font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 20px; border: 1px solid rgba(192,57,43,0.25); }
+
+  .comp-flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .flow-pill { border-radius: 20px; padding: 5px 12px; font-size: 12px; font-weight: 600; }
+  .pill-a   { background: rgba(68,85,112,0.1); color: var(--text-mid); border: 1px solid rgba(68,85,112,0.2); }
+  .pill-b   { background: rgba(29,111,164,0.12); color: var(--blue); border: 1px solid rgba(29,111,164,0.3); }
+  .pill-out { background: rgba(192,57,43,0.08); color: var(--red-soft); border: 1px solid rgba(192,57,43,0.2); text-decoration: line-through; opacity: 0.75; }
+  .flow-plus    { font-size: 18px; font-weight: 700; color: var(--sky); flex-shrink: 0; }
+  .flow-arrow-sw{ font-size: 18px; font-weight: 700; color: var(--red-soft); flex-shrink: 0; }
+
+  /* ── MATRIX ── */
+  .matrix-wrap { margin-top: 24px; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+  .matrix-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+  .matrix-scroll { overflow-x: auto; }
+  .matrix-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px; }
+  .matrix-table th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.3px; }
+  .matrix-table th:first-child { border-radius: 8px 0 0 0; }
+  .matrix-table th:last-child  { border-radius: 0 8px 0 0; }
+  .matrix-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid); vertical-align: middle; line-height: 1.5; }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .matrix-table tr:nth-child(even) td { background: var(--off-white); }
+  .mt-combo  { display: inline-block; background: rgba(29,111,164,0.12); color: var(--blue); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(29,111,164,0.3); white-space: nowrap; }
+  .mt-switch { display: inline-block; background: rgba(192,57,43,0.1); color: var(--red-soft); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(192,57,43,0.25); white-space: nowrap; }
+  .mt-both   { display: inline-block; background: rgba(108,52,131,0.1); color: var(--purple); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(108,52,131,0.25); white-space: nowrap; }
+
+  @media (max-width: 680px) {
+    .comp-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── BOTTOM ── */
+  .bottom-note { margin-top: 50px; background: var(--navy); color: rgba(255,255,255,0.65); border-radius: var(--radius); padding: 26px 30px; font-size: 13px; display: flex; align-items: center; gap: 14px; }
+  .bottom-note-icon { font-size: 28px; flex-shrink: 0; }
+  .bottom-note strong { color: var(--sky-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 28px; }
+    .usp-grid, .logic-grid { grid-template-columns: 1fr; }
+    .page { padding: 0 14px 40px; }
+    .rp-case-title { font-size: 14px; }
+  }
+
+  /* 모바일 global nav */
+  @media (max-width: 600px) {
+    #global-nav { padding: 0 10px; }
+    .gnav-logo { font-size: 12px; margin-right: 10px; }
+    .gnav-tab { padding: 14px 12px; font-size: 12px; }
+  }
+
+
+/* ═══════════════════════════════════
+   GLOBAL TAB NAV
+═══════════════════════════════════ */
+#global-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--navy);
+  border-bottom: 2px solid rgba(61,165,217,0.3);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 0;
+  box-shadow: 0 2px 16px rgba(10,22,40,0.25);
+}
+.gnav-logo {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--sky-light);
+  letter-spacing: .5px;
+  padding: 14px 0;
+  margin-right: 28px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.gnav-logo span { color: var(--gold-light); }
+.gnav-tabs { display: flex; gap: 0; flex: 1; }
+.gnav-tab {
+  padding: 16px 22px;
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  cursor: pointer; border: none;
+  background: transparent;
+  font-family: 'Noto Sans KR', sans-serif;
+  border-bottom: 3px solid transparent;
+  transition: all .15s;
+  white-space: nowrap;
+  letter-spacing: .2px;
+}
+.gnav-tab:hover { color: rgba(255,255,255,0.8); }
+.gnav-tab.on {
+  color: #fff;
+  border-bottom-color: var(--sky);
+  background: rgba(61,165,217,0.08);
+}
+
+/* hide/show panels */
+.tab-panel { display: none; }
+.tab-panel.on { display: block; }
+
+/* ═══════════════════════════════════
+   CALCULATOR STYLES (blue theme)
+═══════════════════════════════════ */
+#calc-panel {
+  background: #f1f5f9;
+  min-height: calc(100vh - 51px);
+  padding: 28px 16px 60px;
+}
+.calc-inner { max-width: 900px; margin: 0 auto; }
+
+/* product strip */
+.cp-strip {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  margin-bottom: 18px;
+}
+.cp-card {
+  background: #fff; border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.cp-name { font-size: 16px; font-weight: 800; color: #0f172a; }
+.cp-sig  { font-size: 13px; color: #64748b; margin-top: 4px; }
+.cp-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px; font-weight: 700; color: #2563eb;
+  text-align: right;
+}
+.cp-unit { font-size: 13px; color: #94a3b8; font-weight: 400; }
+
+/* controls */
+.cc-card {
+  background: #fff; border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 20px 22px; margin-bottom: 22px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.cc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.cc-label {
+  font-size: 11px; font-weight: 700; color: #64748b;
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+}
+.cc-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cc-chip {
+  padding: 9px 16px; border-radius: 8px;
+  border: 1.5px solid #e2e8f0; background: #fff;
+  font-size: 14px; font-weight: 600; color: #475569;
+  cursor: pointer; transition: all .1s;
+  font-family: 'Noto Sans KR', sans-serif; line-height: 1;
+  min-height: 38px; display: flex; align-items: center;
+}
+.cc-chip:hover { border-color: #2563eb; color: #2563eb; }
+.cc-chip.on { background: #2563eb; border-color: #2563eb; color: #fff; }
+.cc-input {
+  width: 80px; padding: 9px 10px;
+  border: 1.5px solid #e2e8f0; border-radius: 8px;
+  font-size: 14px; font-family: 'JetBrains Mono', monospace;
+  font-weight: 600; outline: none; color: #0f172a;
+  background: #f8fafc; text-align: center; transition: border-color .1s;
+  min-height: 38px;
+}
+.cc-input:focus { border-color: #2563eb; background: #fff; }
+.cc-input::placeholder { color: #cbd5e1; font-size: 11px; font-family: 'Noto Sans KR', sans-serif; }
+
+/* product tabs inside calc */
+.cprod-tabs { display: flex; gap: 3px; }
+.cprod-tab {
+  padding: 11px 22px; border-radius: 8px 8px 0 0;
+  background: #cbd5e1; color: #64748b;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  border: none; font-family: 'Noto Sans KR', sans-serif; transition: all .1s;
+}
+.cprod-tab.on { background: #fff; color: #1d4ed8; }
+
+.ctable-card {
+  background: #fff; border-radius: 0 10px 10px 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07); overflow: hidden;
+}
+.cbar {
+  background: #2563eb; padding: 15px 20px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.cbar-title { font-size: 15px; font-weight: 700; color: #fff; flex: 1; }
+.cbar-tag {
+  background: rgba(255,255,255,.2); border-radius: 4px;
+  padding: 5px 12px; font-size: 13px; font-weight: 700; color: #fff;
+}
+.ccase-tabs {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 16px; background: #f8fafc;
+  display: flex; gap: 0; overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ccase-tab {
+  padding: 13px 18px; font-size: 14px; font-weight: 700; color: #94a3b8;
+  cursor: pointer; border: none; background: transparent;
+  font-family: 'Noto Sans KR', sans-serif;
+  border-bottom: 3px solid transparent; transition: all .1s; white-space: nowrap; flex-shrink: 0;
+  min-height: 48px; display: flex; align-items: center;
+}
+.ccase-tab:hover { color: #2563eb; }
+.ccase-tab.on { color: #2563eb; border-bottom-color: #2563eb; }
+
+.ctscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.ctable { width: 100%; border-collapse: collapse; min-width: 400px; }
+.ctable thead th {
+  padding: 13px 18px; font-size: 13px; font-weight: 700; color: #475569;
+  letter-spacing: .3px; text-align: center;
+  background: #eff6ff; border-bottom: 2px solid #bfdbfe; white-space: nowrap;
+}
+.ctable thead th:first-child { text-align: left; }
+.ctable thead th.hl { background: #dbeafe; color: #1d4ed8; }
+
+.ctable tbody tr {
+  border-bottom: 1px solid #f1f5f9; transition: background .08s;
+  cursor: pointer;
+}
+.ctable tbody tr:last-child { border-bottom: none; }
+.ctable tbody tr:hover { background: #eff6ff; }
+
+/* ── 선택된 행 빨간 테두리 강조 ── */
+.ctable tbody tr.row-selected {
+  outline: 2.5px solid #ef4444;
+  outline-offset: -2px;
+  background: #fff5f5 !important;
+  position: relative;
+}
+.ctable tbody tr.row-selected td {
+  color: #1e1e1e !important;
+  font-weight: 700 !important;
+}
+.ctable tbody tr.row-selected td.amt-col {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+  border-left-color: #ef4444 !important;
+  font-size: 17px !important;
+}
+/* 선택 시 row-selected hover */
+.ctable tbody tr.row-selected:hover { background: #fee2e2 !important; }
+
+.ctable td {
+  padding: 16px 18px; text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px; color: #475569; white-space: nowrap;
+}
+.ctable td:first-child { text-align: left; font-family: 'Noto Sans KR', sans-serif; }
+.ctable td.amt-col {
+  background: #eff6ff; font-size: 17px; font-weight: 700; color: #1d4ed8;
+  border-left: 2px solid #bfdbfe;
+}
+.ctable tbody tr:hover td.amt-col { background: #dbeafe; }
+
+.csig {
+  display: inline-block; padding: 4px 11px; border-radius: 6px;
+  font-size: 13px; font-weight: 700;
+  font-family: 'JetBrains Mono', monospace; letter-spacing: .5px;
+}
+.csig-qd  { background: #eff6ff; color: #1d4ed8; }
+.csig-bid { background: #ede9fe; color: #7c3aed; }
+.csig-tid { background: #fef3c7; color: #d97706; }
+
+/* 선택됐을 때 sig badge도 강조 */
+.ctable tbody tr.row-selected .csig { box-shadow: 0 0 0 1.5px currentColor; }
+
+.cfoot {
+  border-top: 1px solid #e2e8f0;
+  padding: 12px 20px; display: flex; gap: 16px;
+  font-size: 13px; color: #94a3b8; flex-wrap: wrap; align-items: center;
+}
+.cfoot b { color: #334155; font-size: 14px; }
+.calc-note {
+  margin-top: 14px; font-size: 12px; color: #94a3b8;
+  text-align: center; line-height: 2;
+}
+.calc-note strong { color: #2563eb; }
+
+/* 선택 힌트 */
+.row-hint {
+  font-size: 12px; color: #94a3b8;
+  text-align: right; padding: 8px 20px 0;
+}
+
+/* ── 모바일 반응형 ── */
+@media(max-width:700px){
+  #calc-panel { padding: 16px 10px 50px; }
+  .cp-strip { grid-template-columns: 1fr; gap: 8px; }
+  .cc-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cc-card { padding: 16px 14px; }
+  .cp-card { padding: 14px 14px; }
+  .cp-name { font-size: 15px; }
+  .cp-price { font-size: 20px; }
+  .cbar { padding: 12px 14px; flex-wrap: wrap; gap: 6px; }
+  .cbar-title { font-size: 13px; width: 100%; flex: unset; }
+  .ctable thead th { padding: 11px 10px; font-size: 12px; }
+  .ctable td { padding: 14px 10px; font-size: 14px; }
+  .ctable td.amt-col { font-size: 15px; }
+  .ctable tbody tr.row-selected td.amt-col { font-size: 16px !important; }
+  .cprod-tab { padding: 10px 14px; font-size: 13px; }
+  .ccase-tab { padding: 11px 14px; font-size: 13px; }
+  .cfoot { font-size: 12px; padding: 10px 14px; gap: 10px; }
+  .calc-note { font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ GLOBAL NAV ═══ -->
+<nav id="global-nav">
+  <div class="gnav-logo">실리스칸<span>®</span></div>
+  <div class="gnav-tabs">
+    <button class="gnav-tab on" onclick="switchGTab('training',this)">📋 MR 교육자료</button>
+    <button class="gnav-tab" onclick="switchGTab('calc',this)">🧮 조견표 · 처방금액 계산</button>
+  </div>
+</nav>
+
+<!-- ═══ PANEL 1: TRAINING ═══ -->
+<div id="training-panel" class="tab-panel on">
+
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="page" style="padding-bottom:0;">
+    <div class="hero-badge">MR 교육 자료 · 서울3사업부 전용</div>
+    <h1>실리스칸<span>®</span><br>로컬 시장 핵심 전략</h1>
+    <p class="hero-sub">서울3사업부 MR 교육 전용 자료</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">💊 국내 유일 <strong>정제</strong> 실리마린</div>
+      <div class="hero-meta-item">⏰ 하루 <strong>1회(QD)</strong> 복용</div>
+      <div class="hero-meta-item">💰 레가론 대비 약 <strong>16%</strong> 경제적</div>
+      <div class="hero-meta-item">📅 <strong>4/1</strong> 급여 전환 예정</div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ── 1. USP ── -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">1</div>
+      <div class="section-title">압도적 제품 경쟁력 (USP)</div>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-card">
+        <div class="usp-card-header">
+          <div class="usp-icon blue">💊</div>
+          <div>
+            <div class="usp-card-title">국내 유일 '정제'</div>
+            <div class="usp-card-tag">안정성 · 편의성</div>
+          </div>
+        </div>
+        <div class="usp-card-body">
+          <div class="usp-item"><div class="usp-dot"></div><div><strong>탁월한 안정성:</strong> 여름철 캡슐 달라붙음 현상 완벽 해결</div></div>
+          <div class="usp-item"><div class="usp-dot"></div><div><strong>복용 편의성:</strong> 작은 크기, 목 넘김 용이</div></div>
+          <div class="usp-item"><div class="usp-dot"></div><div><strong>조제 편의성:</strong> 약국 분류·보관 간편</div></div>
+        </div>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-header">
+          <div class="usp-icon gold">💰</div>
+          <div>
+            <div class="usp-card-title">최고의 '경제성'</div>
+            <div class="usp-card-tag">약가 · 순응도</div>
+          </div>
+        </div>
+        <div class="usp-card-body">
+          <div class="usp-item"><div class="usp-dot"></div><div><strong>저렴한 약가:</strong> 기존 대비 약 16% 경제적 (4/1 급여 전환 예정)</div></div>
+          <div class="usp-item"><div class="usp-dot"></div><div><strong>투약 단순화:</strong> 레가론 3T(TID) → 실리스칸 1T(QD)</div></div>
+          <div class="usp-item"><div class="usp-dot"></div><div><strong>순응도 향상:</strong> 복용 부담 감소 → 장기 처방 유지에 유리</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 2. 처방 논리 ── -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">2</div>
+      <div class="section-title">처방 논리 및 함량 오해 해결</div>
+    </div>
+    <div class="logic-grid">
+      <div class="logic-card">
+        <div class="logic-card-title"><span>📊</span> 함량 팩트 체크</div>
+        <table class="compare-table">
+          <thead><tr><th>구분</th><th>레가론</th><th>실리스칸</th></tr></thead>
+          <tbody>
+            <tr><td>1회 복용량</td><td>140mg × 2T</td><td>350mg × 1T</td></tr>
+            <tr class="highlight-row"><td>유효 성분</td><td>동일</td><td><span class="same-tag">✔ 동일</span></td></tr>
+            <tr><td>복용 횟수</td><td>TID (하루 3회)</td><td><strong>QD (하루 1회)</strong></td></tr>
+            <tr><td>제형</td><td>경질캡슐</td><td><strong>정제</strong></td></tr>
+            <tr><td>분류</td><td>일반의약품</td><td><strong>일반의약품 (급여처방 가능)</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px; color:var(--text-light); margin-top:10px;">※ 숫자가 낮다고 효과가 적은 것이 아닙니다. 표기법 차이일 뿐!<br>※ 레가론은 TID(하루 3회) 용법으로, 실리스칸 QD(하루 1회) 대비 복용 횟수가 3배 많습니다.</p>
+      </div>
+      <div class="logic-card">
+        <div class="logic-card-title"><span>🔄</span> 처방 흐름 전략</div>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-step-num init">①</div>
+            <div>
+              <div class="flow-step-label init">초기 — 병용</div>
+              <div class="flow-step-text">간 수치 급상승 시 기존 약(고덱스/우루사) +<br><strong>실리스칸 2제 병용</strong></div>
+            </div>
+          </div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">
+            <div class="flow-step-num maint">②</div>
+            <div>
+              <div class="flow-step-label maint">유지 — 단독</div>
+              <div class="flow-step-text">수치 안정 후 기존 약 중단 →<br><strong>실리스칸 단독 QD</strong>로 장기 유지</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 3. RP ── -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">3</div>
+      <div class="section-title">케이스별 실전 영업 RP 가이드 (총 9케이스)</div>
+    </div>
+
+    <div class="rp-filter">
+      <button class="filter-btn active" onclick="filterRP('all',this)">전체 (9)</button>
+      <button class="filter-btn" onclick="filterRP('dr',this)">원장님 (7)</button>
+      <button class="filter-btn" onclick="filterRP('obj',this)">반론 대응 (4)</button>
+      <button class="filter-btn" onclick="filterRP('ddb',this)">DDB 대응 (2)</button>
+    </div>
+
+    <div class="rp-cases">
+
+      <!-- CASE 01 -->
+      <div class="rp-case open" id="case1" data-cat="dr">
+        <div class="rp-case-header" onclick="toggleCase('case1')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-blue">01</div>
+            <div>
+              <div class="rp-case-tag tag-blue">내과 / 일반과 원장님</div>
+              <div class="rp-case-title">간 수치 상승 환자 — 2제 병용 진입 전략</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 간 수치가 급속도로 오른 환자분의 초기 관리에 고민 많으시죠? 저희 실리스칸은 <mark>안전한 간 보호 효과의 국내 유일 정제 실리마린</mark>입니다.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                수치가 높으면 일단 고덱스를 쓰는데, 굳이 바꿔야 하나요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                바꾸실 필요 없습니다! 초기에는 고덱스 기본으로 하시되, 실리스칸을 함께 <mark>2제로 병용</mark>해 보세요. 더 확실하게 수치를 낮출 수 있고, 환자분이 안정되면 고덱스를 끊고 <mark>하루 한 번 실리스칸 단독</mark>으로 자연스럽게 유지하시면 됩니다.<br><br>
+                참고로 실리마린은 이미 건강기능식품·일반의약품 시장에서도 <mark>간 건강 카테고리 판매 3위</mark>를 차지할 만큼 환자 인지도와 수요가 높은 성분입니다. 급여처방이 가능한 일반의약품이라 원장님이 처방해 주시면 환자분들이 더욱 신뢰하고 잘 드십니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            기존 처방 패턴 존중 + "추가" 논리로 진입 → 안정기에 단독 전환 유도. 건기식·일반약 시장 간 건강 3위 성분이라는 환자 인지도를 급여처방 가능 일반의약품의 신뢰 근거로 활용.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 02 -->
+      <div class="rp-case" id="case2" data-cat="dr">
+        <div class="rp-case-header" onclick="toggleCase('case2')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-green">02</div>
+            <div>
+              <div class="rp-case-tag tag-green">내과 / 가정의학과 원장님</div>
+              <div class="rp-case-title">지방간 환자 — 생활습관 개선 병행 + 간세포 보호</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 비알코올성 지방간 환자분들, 식이요법만으론 수치 관리가 더딘 경우 많으시죠? 그런 분들께 실리스칸을 <mark>간세포 보호 + 항산화 작용</mark> 목적으로 추가해 보시겠어요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                지방간은 식이요법이 우선 아닌가요? 약을 굳이 써야 할까요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                물론 식이 교정이 기본입니다. 다만 <mark>식이요법을 병행하면서도 간세포 손상이 진행되는 환자</mark>에게 실리스칸으로 염증·산화 스트레스를 억제하면 회복 속도가 훨씬 빠릅니다. 하루 한 번이라 순응도도 높고, 환자분도 "간을 위해 뭔가를 하고 있다"는 만족감을 갖게 됩니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            생활습관 개선과 병행 가능한 약물로 포지셔닝. 환자의 심리적 안심 효과까지 어필하면 처방 수용도 상승.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 03 -->
+      <div class="rp-case" id="case3" data-cat="dr">
+        <div class="rp-case-header" onclick="toggleCase('case3')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-brown">03</div>
+            <div>
+              <div class="rp-case-tag tag-brown">내과 / 가정의학과 원장님</div>
+              <div class="rp-case-title">음주 잦은 직장인 환자 — 알코올성 간 손상 예방</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 직장인 건강검진 시즌에 "음주가 잦은데 간이 걱정된다"는 환자 많이 오시죠? 그런 분들께 실리스칸이 딱 맞습니다. <mark>알코올로 인한 산화 스트레스와 간세포 손상을 억제</mark>하는 기전입니다.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                그런 환자한테 보통 우루사 처방하는데, 뭐가 다른가요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                우루사(UDCA)는 담즙산 계열로 담도 기능 개선에 강점이 있고, 실리스칸(실리마린)은 <mark>간세포 막 보호 + 항산화 + 항염증</mark>에 특화되어 기전이 다릅니다. 알코올성 손상처럼 산화 스트레스가 주원인인 경우엔 <mark>실리마린이 더 적합</mark>하고, 두 가지 병용도 충분히 가능합니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            우루사와 기전 차별화로 "대체"가 아닌 "추가 또는 대안" 포지션 확보. 건강검진 시즌 타깃으로 신규 처방 창출.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 04 -->
+      <div class="rp-case" id="case4" data-cat="dr">
+        <div class="rp-case-header" onclick="toggleCase('case4')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-blue">04</div>
+            <div>
+              <div class="rp-case-tag tag-blue">내과 / 가정의학과 원장님</div>
+              <div class="rp-case-title">다약제 복용 만성질환 환자 — QOL 개선제 포지셔닝</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 고혈압·당뇨로 약을 4~5가지 드시면서 피로를 호소하는 환자분들, 간 보호제 하나 더 추가하기 망설여지시죠? 실리스칸은 <mark>하루 한 번, 작은 정제 하나</mark>라 복용 부담이 거의 없습니다.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                그냥 비타민이나 영양제 아닌가요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                단순 영양제가 아니라 <mark>급여처방이 가능한 일반의약품 간 보호제</mark>입니다. 원장님이 처방해 주신다는 것 자체가 환자에게 신뢰를 줍니다. "의사가 처방해준 약"이라는 명분이 생기면서 <mark>피로 회복과 컨디션 개선에 대한 환자 만족도</mark>가 크게 올라갑니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            다약제 복용 환자에게 '간 보호'라는 명분 + QOL 개선제 포지셔닝. 만성질환 거래처 지속 처방 창출 가능.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 05 -->
+      <div class="rp-case" id="case5" data-cat="dr">
+        <div class="rp-case-header" onclick="toggleCase('case5')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-teal">05</div>
+            <div>
+              <div class="rp-case-tag tag-teal">내과 / 가정의학과 원장님</div>
+              <div class="rp-case-title">약 복용으로 간 수치 상승 우려 환자 — 예방적 처방</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 스타틴이나 항결핵제 같은 약물을 장기 복용하는 환자분들, ALT 모니터링하시면서 간 부담 신경 쓰이시죠? 그런 분들께 <mark>예방적 목적으로 실리스칸을 함께 처방</mark>해 보시면 어떨까요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                아직 수치가 정상인데 미리부터 간 보호제를 쓰는 게 맞나요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                수치가 올라간 뒤에 쓰는 것보다 <mark>올라가지 않도록 미리 관리하는 것</mark>이 오히려 환자 관리 퀄리티를 높입니다. 하루 한 번 정제 하나라 부담도 적고, 환자분도 "선생님이 꼼꼼하게 봐주신다"는 인상을 받으십니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            약물 유발성 간 손상 고위험군 대상 예방적 처방 논리. 원장님 진료 퀄리티 향상과 연결 → 환자 신뢰도 강화 효과.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 06 -->
+      <div class="rp-case" id="case6" data-cat="dr">
+        <div class="rp-case-header" onclick="toggleCase('case6')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-purple">06</div>
+            <div>
+              <div class="rp-case-tag tag-purple">신규 거래처 · 원장님</div>
+              <div class="rp-case-title">첫 방문 신규 거래처 — 30초 USP 전달 + 첫 처방 유도</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 안녕하세요. 대웅제약 서울3사업부 담당 MR ○○○입니다. 오늘은 저희 간 보호제 신제품 실리스칸을 소개드리러 왔습니다. <mark>국내 유일 정제 실리마린</mark>으로, 기존 캡슐 제형의 불편함을 해결한 제품입니다.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                대웅 제품이 여러 개인데, 이건 뭐가 특별한 건가요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                핵심은 세 가지입니다. 첫째, <mark>정제라 여름철도 안심</mark> — 캡슐처럼 달라붙는 문제 없습니다. 둘째, <mark>하루 한 번(QD)</mark>으로 레가론 대비 복용 횟수 절반. 셋째, <mark>4월 1일부터 급여 전환 예정</mark>으로 환자 부담도 줄어듭니다. 지금이 처방 시작하시기 딱 좋은 타이밍입니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            3가지 USP를 30초 안에 압축 전달. 급여 전환 타이밍을 즉시성 이슈로 활용 → 첫 처방 진입 성공률 상승.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 07 -->
+      <div class="rp-case" id="case7" data-cat="obj">
+        <div class="rp-case-header" onclick="toggleCase('case7')">
+          <div class="rp-case-left">
+            <div class="rp-case-num num-teal">07</div>
+            <div>
+              <div class="rp-case-tag tag-teal">반론 대응 · 원장님</div>
+              <div class="rp-case-title">"이미 쓰는 간 보호제가 있어요" — 기존 처방 고집 대응</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                나는 이미 우루사(고덱스)로 잘 쓰고 있어서 굳이 바꿀 필요를 못 느끼겠는데요.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                <mark>기존 처방을 바꾸실 필요는 전혀 없습니다.</mark> 다만 기존 약으로 수치가 잘 잡히지 않는 환자, 또는 복용 순응도가 낮은 환자 한두 분에게만 <mark>옵션으로 실리스칸을 추가</mark>해 보세요. 하루 한 번 정제라 거부감도 적고, 차이를 느끼시면 그때 처방 범위를 자연스럽게 넓혀가시면 됩니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            "교체"가 아닌 "옵션 추가"로 프레이밍. 부담 없는 소량 체험 유도 → 처방 경험 구축이 핵심. 첫 처방이 전부.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 08 : DDB 스위칭 -->
+      <div class="rp-case" id="case8" data-cat="ddb">
+        <div class="rp-case-header" onclick="toggleCase('case8')">
+          <div class="rp-case-left">
+            <div class="rp-case-num" style="background:#b45309;">08</div>
+            <div>
+              <div class="rp-case-tag" style="color:#b45309;">DDB 대응 · 원장님 | 스위칭</div>
+              <div class="rp-case-title">"비페닐(DDB) 처방 중" — 수치 마스킹 문제 부각 스위칭 전략</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                원장님, 현재 DDB(비페닐) 계열로 간 수치 관리하시는 환자분들 계시죠? 수치가 빠르게 내려가는 장점이 있는 반면, <mark>실제 간세포 보호·재생 기전이 없다</mark>는 점에서 한계가 있습니다.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                수치가 잘 내려가던데, 무슨 문제가 있나요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                DDB는 <mark>ALT 수치는 빠르게 낮추지만, 간세포 손상 자체를 막는 기전이 없습니다.</mark> 수치만 좋아 보이고 실제 간 손상은 계속 진행되는 "수치 마스킹" 현상이 나타날 수 있고, 약을 끊으면 수치가 반등하는 경우도 있습니다.<br><br>
+                실리스칸(실리마린)은 <mark>간세포막을 직접 보호하고 염증·산화 스트레스를 근본적으로 차단</mark>합니다. 수치 관리와 근본 보호를 동시에 원하시는 환자분께 전환해 보시겠어요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                그럼 전환 후 수치 관리가 충분히 되나요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                실리마린도 ALT·AST 개선 효과가 확인된 성분입니다. 수치 감소 속도는 DDB보다 다소 완만할 수 있지만, <mark>간세포 자체를 보호하면서 수치를 안정적으로 유지</mark>하는 방향이라 장기 관리 환자에게 더 적합합니다. 하루 한 번 정제 하나라 순응도도 높습니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            DDB의 "수치 마스킹 + 반등 위험" 약점을 근거로 스위칭 명분 확보. 수치 감소 속도 차이는 인정하되, <strong>장기 관리 관점</strong>에서 실리스칸의 근본 보호 기전을 강조. 단기 수치 vs 장기 간 건강의 프레임 전환이 핵심.
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 09 : DDB 병용 -->
+      <div class="rp-case" id="case9" data-cat="ddb">
+        <div class="rp-case-header" onclick="toggleCase('case9')">
+          <div class="rp-case-left">
+            <div class="rp-case-num" style="background:#b45309;">09</div>
+            <div>
+              <div class="rp-case-tag" style="color:#b45309;">DDB 대응 · 원장님 | 병용</div>
+              <div class="rp-case-title">"비페닐(DDB) 처방 중" — 스위칭 거부 시 병용 진입 전략</div>
+            </div>
+          </div>
+          <div class="rp-toggle">▼</div>
+        </div>
+        <div class="rp-body">
+          <div class="rp-dialogue-wrap">
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                비페닐로 이미 수치가 잘 잡히고 있어서 굳이 바꾸고 싶지 않아요.
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                네, 충분히 이해합니다. 바꾸실 필요 없습니다. 다만 DDB는 수치를 빠르게 낮추는 데 강점이 있고, 실리스칸은 <mark>간세포막을 직접 보호하는 기전</mark>이라 역할이 완전히 다릅니다.<br><br>
+                두 가지를 함께 쓰시면 <mark>수치 관리(DDB) + 간세포 근본 보호(실리스칸)</mark>를 동시에 달성하는 투트랙 처방이 됩니다. 특히 수치가 반복적으로 올라오는 환자, 또는 지방간이 동반된 환자분께 먼저 시도해 보시겠어요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar dr">👨‍⚕️</div>
+              <div class="rp-bubble dr"><div class="rp-name dr">원장님</div>
+                약이 너무 늘어나는 것 아닌가요?
+              </div>
+            </div>
+            <div class="rp-turn">
+              <div class="rp-avatar mr">🧑‍💼</div>
+              <div class="rp-bubble mr"><div class="rp-name mr">MR</div>
+                실리스칸은 <mark>하루 한 번, 작은 정제 하나</mark>라 복용 부담이 거의 없습니다. 환자분도 "간을 더 꼼꼼하게 관리받는다"는 만족감을 갖게 되고, 수치가 안정되면 자연스럽게 DDB를 줄이고 <mark>실리스칸 단독 유지</mark>로 전환하시면 됩니다.
+              </div>
+            </div>
+          </div>
+          <div class="rp-keypoint"><strong>🎯 핵심 전략</strong>
+            스위칭 거부 시 즉시 "병용 진입"으로 전환. DDB는 인정하되 실리스칸을 추가하는 논리로 첫 처방 확보 → 수치 안정 후 단계적 DDB 축소 + 실리스칸 단독 유지로 이어지는 2단계 전략.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rp-cases -->
+  </div><!-- /section -->
+
+  <!-- ── 4. 간장용제 경쟁 지형 ── -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">4</div>
+      <div class="section-title">간장용제 경쟁 지형 — 실리스칸 포지셔닝 전략</div>
+    </div>
+
+    <div class="comp-intro">
+      💡 원장님마다 주력 처방 약제가 다릅니다. 거래처별 현재 처방 패턴을 파악한 뒤, 아래 전략을 그대로 적용하세요.
+    </div>
+
+    <!-- ── 3대 성분 삼각 구조 ── -->
+    <div style="background:#fff; border-radius:16px; box-shadow:0 8px 40px rgba(10,22,40,0.13); padding:32px 28px 28px; margin-bottom:24px;">
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:20px; letter-spacing:.5px;">
+        🔺 국내 주요 간장용제·이담제 (급여인정) — 3대 성분 구조
+      </div>
+
+      <!-- 삼각형 시각화 -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0; margin-bottom:28px;">
+
+        <!-- 상단: UDCA -->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+          <div style="background:#1e8c5a; color:#fff; width:120px; height:120px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:20px; font-weight:900; box-shadow:0 4px 16px rgba(30,140,90,0.35);">
+            UDCA
+          </div>
+          <div style="font-size:12px; color:#1e8c5a; font-weight:700; text-align:center; line-height:1.6;">
+            UDCA 단일제<br>UDCA + CDCA 복합제
+          </div>
+          <div style="font-size:12px; color:var(--text-mid); text-align:center; margin-top:2px;">
+            대표 제품: <strong>우루사</strong>
+          </div>
+        </div>
+
+        <!-- 화살표 행 -->
+        <div style="display:flex; align-items:center; gap:0; margin:8px 0;">
+          <div style="width:100px; text-align:right; font-size:20px; color:#ccc; transform:rotate(-30deg);">⟵</div>
+          <div style="width:60px;"></div>
+          <div style="width:100px; text-align:left; font-size:20px; color:#ccc; transform:rotate(30deg);">⟶</div>
+        </div>
+
+        <!-- 하단 좌우 -->
+        <div style="display:flex; align-items:flex-start; gap:32px;">
+
+          <!-- DDB -->
+          <div style="display:flex; flex-direction:column; align-items:center; gap:6px; max-width:180px;">
+            <div style="background:#b45309; color:#fff; width:120px; height:120px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:20px; font-weight:900; box-shadow:0 4px 16px rgba(180,83,9,0.35);">
+              DDB
+            </div>
+            <div style="font-size:12px; color:#b45309; font-weight:700; text-align:center; line-height:1.6;">
+              DDB 단일제<br>DDB + UDCA 복합제<br>DDB + 마늘유 복합제<br>DDB + 항독성간장엑스 등 복합제
+            </div>
+            <div style="font-size:12px; color:var(--text-mid); text-align:center; margin-top:2px;">
+              대표 제품: <strong>고덱스, 펜넬</strong>
+            </div>
+          </div>
+
+          <!-- 가운데 화살표 -->
+          <div style="display:flex; align-items:center; padding-top:40px; font-size:22px; color:#ccc;">⟷</div>
+
+          <!-- Silymarin -->
+          <div style="display:flex; flex-direction:column; align-items:center; gap:6px; max-width:180px;">
+            <div style="background:#1d6fa4; color:#fff; width:120px; height:120px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:16px; font-weight:900; text-align:center; box-shadow:0 4px 16px rgba(29,111,164,0.35); line-height:1.3;">
+              Sily-<br>marin
+            </div>
+            <div style="font-size:12px; color:#1d6fa4; font-weight:700; text-align:center; line-height:1.6;">
+              Silymarin 단일제
+            </div>
+            <div style="font-size:12px; color:var(--text-mid); text-align:center; margin-top:2px; line-height:1.6;">
+              저용량: <strong>레가론</strong><br>
+              고용량: <strong>하노마린</strong><br>
+              <span style="background:#e8f4ff; color:#1d6fa4; font-weight:700; padding:2px 8px; border-radius:12px; font-size:11px; margin-top:4px; display:inline-block;">★ 실리스칸 (신제품·정제·QD)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 성분별 특징 요약 -->
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:8px;">
+        <div style="background:#e8f5ee; border:1.5px solid #a8dcc2; border-radius:10px; padding:14px 16px;">
+          <div style="font-size:12px; font-weight:700; color:#1e8c5a; margin-bottom:6px; letter-spacing:.5px;">🟢 UDCA — 우루사</div>
+          <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">담즙 분비 촉진·담도 기능 개선 중심. 간세포 직접 보호 기전은 약함. <strong>실리스칸과 기전 보완 → 병용 전략.</strong></div>
+        </div>
+        <div style="background:#fff7ed; border:1.5px solid #fed7aa; border-radius:10px; padding:14px 16px;">
+          <div style="font-size:12px; font-weight:700; color:#b45309; margin-bottom:6px; letter-spacing:.5px;">🟠 DDB — 고덱스·펜넬</div>
+          <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">ALT·AST 수치 빠른 감소 강점. 단, <strong>간세포 보호 기전 없음·수치 마스킹·반등 위험</strong>. → 스위칭 또는 병용 전략.</div>
+        </div>
+        <div style="background:#ebf4ff; border:1.5px solid #90c2f7; border-radius:10px; padding:14px 16px;">
+          <div style="font-size:12px; font-weight:700; color:#1d6fa4; margin-bottom:6px; letter-spacing:.5px;">🔵 Silymarin — 레가론·하노마린·<u>실리스칸</u></div>
+          <div style="font-size:13px; color:var(--text-mid); line-height:1.6;">간세포막 보호·항산화·항염증. 실리스칸은 동일 성분 중 <strong>유일 정제·QD·최저 약가</strong>. → 레가론·하노마린 완전 스위칭 대상.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 개별 약제 카드 -->
+    <div class="comp-grid">
+
+      <!-- 우루사 (UDCA) -->
+      <div class="comp-card">
+        <div class="comp-card-header hdr-urusa">
+          <div class="comp-drug-name">우루사 <span style="font-size:13px; opacity:.8;">(UDCA)</span></div>
+          <div class="comp-drug-sub">100mg=일반의약품 · 200mg·300mg=전문의약품 | 병용 전략</div>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-moa">
+            <span class="moa-badge">기전</span> 담즙산 계열 → <strong>담도 기능 개선·담즙 분비 촉진</strong> 중심 (간세포 직접 보호 약함)
+          </div>
+          <div class="comp-case-label case-combo">📌 전략: 병용</div>
+          <div class="comp-case-desc">
+            UDCA는 담도 기능 개선에 강점, 실리스칸은 <strong>간세포 직접 보호·항산화</strong>에 강점으로 <span class="tag-combo">기전 상호 보완</span>. 두 약제를 함께 처방하면 담도 + 간세포 투트랙 커버가 가능합니다.<br><br>
+            <em>"우루사가 담즙을 관리한다면, 실리스칸은 간세포 자체를 지킵니다. 두 기전을 함께 쓰면 더 완성도 높은 간 관리가 됩니다."</em>
+          </div>
+          <div class="comp-flow">
+            <span class="flow-pill pill-a">우루사 (담도·담즙 관리)</span>
+            <span class="flow-plus">+</span>
+            <span class="flow-pill pill-b">실리스칸 (간세포 보호)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 고덱스·펜넬 (DDB) -->
+      <div class="comp-card" style="border-top-color:#b45309;">
+        <div class="comp-card-header" style="background:linear-gradient(135deg,#78350f,#b45309);">
+          <div class="comp-drug-name">고덱스 · 펜넬 <span style="font-size:13px; opacity:.8;">(DDB계)</span></div>
+          <div class="comp-drug-sub">DDB 단일제 / DDB 복합제 | 스위칭 또는 병용 전략</div>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-moa">
+            <span class="moa-badge">기전</span> 오미자 유도 성분 → <strong>ALT·AST 수치 빠른 감소</strong> (간세포 근본 보호 기전 미약)
+          </div>
+          <div style="margin:12px 0 8px; font-size:12px; font-weight:700; color:#b45309; letter-spacing:.5px; text-transform:uppercase;">⚠ DDB 핵심 약점 — 영업 활용 포인트</div>
+          <div style="background:#fff7ed; border:1px solid #fed7aa; border-radius:8px; padding:10px 14px; font-size:13px; color:#7c2d12; margin-bottom:10px; line-height:1.65;">
+            수치는 빠르게 낮추지만 <strong>간세포 자체를 보호·재생하는 기전이 없음.</strong> "수치 마스킹" 우려, 중단 후 반등 가능성.
+          </div>
+          <div class="comp-case-label" style="background:#fff7ed; color:#b45309; border:1px solid #fed7aa;">🔄 전략: 스위칭 또는 병용</div>
+          <div class="comp-case-desc">
+            <strong>[스위칭]</strong> 수치는 잡혀도 간세포 손상은 진행 → 실리스칸으로 수치 관리 + 근본 보호 동시 달성.<br>
+            <strong>[병용]</strong> DDB로 단기 수치 감소 + 실리스칸으로 간세포 보호 투트랙 처방.<br><br>
+            <em>"DDB가 수치를 빠르게 내리는 건 맞습니다. 하지만 간세포 자체를 보호하는 기전이 없어서, 실리스칸을 함께 쓰시면 수치 관리와 근본 보호를 동시에 하실 수 있습니다."</em>
+          </div>
+          <div class="comp-flow">
+            <span class="flow-pill pill-out">DDB (ALT↓ 빠름 / 간세포 보호 ✕)</span>
+            <span class="flow-arrow-sw">→</span>
+            <span class="flow-pill pill-b">실리스칸 (수치↓ + 간세포 보호 ✔)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 레가론 (Silymarin 저용량) -->
+      <div class="comp-card">
+        <div class="comp-card-header hdr-legaron">
+          <div class="comp-drug-name">레가론 <span style="font-size:13px; opacity:.8;">(Silymarin 저용량)</span></div>
+          <div class="comp-drug-sub">실리마린 경질캡슐 TID / 일반의약품 (급여처방 가능) | 스위칭 전략</div>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-moa">
+            <span class="moa-badge">기전</span> 실리마린 동일 성분 → 간세포 보호·항산화·항염증
+          </div>
+          <div class="comp-case-label case-switch">🔄 전략: 완전 스위칭</div>
+          <div class="comp-case-desc">
+            동일 성분(실리마린)이므로 병용 의미 없음. <span class="tag-switch">완전 스위칭</span> 대상.<br><br>
+            ① <strong>제형 우위</strong>: 경질캡슐 → 정제, 여름철 안정성 확보<br>
+            ② <strong>복용 편의</strong>: TID 3T → QD 1T, 순응도 대폭 향상<br>
+            ③ <strong>경제성</strong>: 약가 약 16% 저렴<br><br>
+            <em>"성분은 같은데 왜 레가론을 쓰세요? 하루 세 번 세 알을 하루 한 번 한 알로 줄일 수 있고, 정제라 여름에도 안심입니다."</em>
+          </div>
+          <div class="comp-flow">
+            <span class="flow-pill pill-out">레가론 (TID·경질캡슐·고약가)</span>
+            <span class="flow-arrow-sw">→</span>
+            <span class="flow-pill pill-b">실리스칸 (QD·정제·경제적)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하노마린 (Silymarin 고용량) -->
+      <div class="comp-card">
+        <div class="comp-card-header" style="background:linear-gradient(135deg,#1a3260,#1d6fa4);">
+          <div class="comp-drug-name">하노마린 <span style="font-size:13px; opacity:.8;">(Silymarin 고용량)</span></div>
+          <div class="comp-drug-sub">실리마린 연질캡슐 / 전문의약품 | 스위칭 전략</div>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-moa">
+            <span class="moa-badge">기전</span> 실리마린 동일 성분 (고용량) → 간세포 보호·항산화·항염증
+          </div>
+          <div class="comp-case-label case-switch">🔄 전략: 스위칭</div>
+          <div class="comp-case-desc">
+            동일 성분이므로 병용 의미 없음. <span class="tag-switch">스위칭</span> 대상.<br>
+            하노마린은 연질캡슐로, 여름철 보관 문제 및 복용 불편 동일하게 발생합니다.<br><br>
+            ① <strong>제형 우위</strong>: 연질캡슐 → 정제, 안정성·복용감 개선<br>
+            ② <strong>복용 편의</strong>: QD 1T로 동일하게 유지하면서 정제로 전환<br>
+            ③ <strong>분류 차이</strong>: 하노마린(전문의약품) → 실리스칸(일반의약품·급여처방 가능)<br><br>
+            <em>"하노마린과 성분이 같지만, 실리스칸은 정제라 여름에도 안심이고, 일반의약품이라 처방 접근이 더 유연합니다."</em>
+          </div>
+          <div class="comp-flow">
+            <span class="flow-pill pill-out">하노마린 (연질캡슐·전문의약품)</span>
+            <span class="flow-arrow-sw">→</span>
+            <span class="flow-pill pill-b">실리스칸 (정제·일반의약품·급여)</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /comp-grid -->
+
+    <!-- 요약 매트릭스 -->
+    <div class="matrix-wrap">
+      <div class="matrix-title">📊 한눈에 보는 실리스칸 전략 매트릭스</div>
+      <div class="matrix-scroll">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>성분군</th>
+              <th>경쟁 약제</th>
+              <th>강점 기전</th>
+              <th>약점</th>
+              <th>전략</th>
+              <th>핵심 멘트</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="1" style="background:#e8f5ee; color:#1e8c5a; font-weight:700; text-align:center;">UDCA</td>
+              <td><strong>우루사</strong></td>
+              <td>담도·담즙 개선</td>
+              <td>간세포 직접 보호 약함</td>
+              <td><span class="mt-combo">병용</span></td>
+              <td>"담도는 우루사, 간세포는 실리스칸"</td>
+            </tr>
+            <tr style="background:#fff7ed;">
+              <td rowspan="1" style="background:#fff7ed; color:#b45309; font-weight:700; text-align:center;">DDB</td>
+              <td><strong>고덱스·펜넬</strong></td>
+              <td>ALT·AST 빠른 감소</td>
+              <td><strong style="color:#b45309;">간세포 보호 없음 / 수치 마스킹 / 반등 위험</strong></td>
+              <td><span class="mt-both">스위칭/병용</span></td>
+              <td>"수치만 낮추는 게 아닌, 간세포까지 지키는 처방으로"</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="background:#ebf4ff; color:#1d6fa4; font-weight:700; text-align:center;">Silymarin</td>
+              <td><strong>레가론</strong> (저용량)</td>
+              <td>동일 성분</td>
+              <td>TID·경질캡슐·고약가</td>
+              <td><span class="mt-switch">스위칭</span></td>
+              <td>"같은 성분, 하루 3번→1번·경질캡슐→정제·저가로 업그레이드"</td>
+            </tr>
+            <tr>
+              <td><strong>하노마린</strong> (고용량)</td>
+              <td>동일 성분</td>
+              <td>연질캡슐·전문의약품</td>
+              <td><span class="mt-switch">스위칭</span></td>
+              <td>"같은 성분, 정제·일반의약품·급여처방 가능으로 전환"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /section -->
+
+  <!-- ── 하단 ── -->
+  </div><!-- /page -->
+
+<script>
+  function toggleCase(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+  function filterRP(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.rp-case').forEach(c => {
+      c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+    });
+  }
+</script>
+
+  <!-- bottom note -->
+  <div style="max-width:980px;margin:0 auto;padding:0 20px 60px;">
+    <div class="bottom-note">
+      <div class="bottom-note-icon">📌</div>
+      <div>
+        본 자료는 <strong>서울3사업부 MR 교육 전용</strong>으로 제작된 내부 자료입니다. <strong>대외 배포 시 반드시 사업부장 승인</strong>을 받으시기 바랍니다.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PANEL 2: CALCULATOR ═══ -->
+<div id="calc-panel" class="tab-panel">
+  <div class="calc-inner">
+
+    <!-- product strip -->
+    <div class="cp-strip">
+      <div class="cp-card">
+        <div><div class="cp-name">실리스칸정 175mg</div><div class="cp-sig">BID (1일 2정) · TID (1일 3정)</div></div>
+        <div class="cp-price">274<span class="cp-unit"> 원/정</span></div>
+      </div>
+      <div class="cp-card">
+        <div><div class="cp-name">실리스칸정 350mg</div><div class="cp-sig">QD (1일 1정)</div></div>
+        <div class="cp-price">401<span class="cp-unit"> 원/정</span></div>
+      </div>
+    </div>
+
+    <!-- controls -->
+    <div class="cc-card">
+      <div class="cc-grid">
+        <div>
+          <div class="cc-label">Order Day</div>
+          <div class="cc-chips" id="grpOD">
+            <button class="cc-chip on" data-v="30">30일</button>
+            <button class="cc-chip" data-v="60">60일</button>
+            <button class="cc-chip" data-v="90">90일</button>
+            <input class="cc-input" id="inOD" type="number" min="1" max="365" placeholder="직접입력">
+          </div>
+        </div>
+        <div>
+          <div class="cc-label">영업일수</div>
+          <div class="cc-chips" id="grpWD">
+            <button class="cc-chip on" data-v="20">20일</button>
+            <button class="cc-chip" data-v="21">21일</button>
+            <button class="cc-chip" data-v="22">22일</button>
+            <input class="cc-input" id="inWD" type="number" min="1" max="31" placeholder="직접입력">
+          </div>
+        </div>
+        <div>
+          <div class="cc-label">하루 케이스 수 · 다중선택</div>
+          <div class="cc-chips" id="grpCase">
+            <button class="cc-chip" data-v="1">1</button>
+            <button class="cc-chip" data-v="3">3</button>
+            <button class="cc-chip on" data-v="5">5</button>
+            <button class="cc-chip" data-v="7">7</button>
+            <button class="cc-chip" data-v="10">10</button>
+            <button class="cc-chip" data-v="15">15</button>
+            <button class="cc-chip" data-v="20">20</button>
+            <input class="cc-input" id="inCase" type="number" min="1" placeholder="추가" style="width:54px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- product tabs -->
+    <div class="cprod-tabs">
+      <button class="cprod-tab on" onclick="setCProd('175',this)">실리스칸 175mg</button>
+      <button class="cprod-tab" onclick="setCProd('350',this)">실리스칸 350mg</button>
+    </div>
+
+    <div class="ctable-card">
+      <div class="cbar">
+        <div class="cbar-title" id="cbarTitle">실리스칸정 175mg · 274원/정 · BID / TID</div>
+        <span class="cbar-tag" id="cbarOD">Order 30일</span>
+        <span class="cbar-tag" id="cbarWD">영업 20일</span>
+      </div>
+      <div class="ccase-tabs" id="ccaseTabs"></div>
+      <div class="ctscroll">
+        <table class="ctable">
+          <thead><tr id="ctheadRow"></tr></thead>
+          <tbody id="ctbody"></tbody>
+        </table>
+      </div>
+      <div class="cfoot" id="cfoot"></div>
+    </div>
+
+    <div class="calc-note" id="calcNote"></div>
+  </div>
+</div>
+
+<script>
+/* ═══ GLOBAL TAB ═══ */
+function switchGTab(id, el) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.gnav-tab').forEach(b => b.classList.remove('on'));
+  document.getElementById(id + '-panel').classList.add('on');
+  el.classList.add('on');
+}
+
+/* ═══ TRAINING JS ═══ */
+
+  function toggleCase(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+  function filterRP(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.rp-case').forEach(c => {
+      c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+    });
+  }
+
+
+/* ═══ CALCULATOR JS ═══ */
+const CPRICES = { '175': 274, '350': 401 };
+const CSIGS = {
+  '175': [
+    { code: 'BID', mult: 2, label: 'BID', desc: '1일 2정' },
+    { code: 'TID', mult: 3, label: 'TID', desc: '1일 3정' },
+  ],
+  '350': [
+    { code: 'QD',  mult: 1, label: 'QD',  desc: '1일 1정' },
+  ]
+};
+
+let cProd = '175', cOrderDay = 30, cWorkDay = 20;
+let cCases = new Set([5]);
+let cActiveCase = 5;
+
+function cBindSingle(grpId, inId, setter) {
+  const grp = document.getElementById(grpId);
+  grp.querySelectorAll('.cc-chip').forEach(c => {
+    c.addEventListener('click', () => {
+      grp.querySelectorAll('.cc-chip').forEach(x => x.classList.remove('on'));
+      c.classList.add('on');
+      document.getElementById(inId).value = '';
+      setter(+c.dataset.v); cRender();
+    });
+  });
+  document.getElementById(inId).addEventListener('input', function() {
+    const v = +this.value;
+    if (v > 0) {
+      grp.querySelectorAll('.cc-chip').forEach(x => x.classList.remove('on'));
+      setter(v); cRender();
+    }
+  });
+}
+cBindSingle('grpOD', 'inOD', v => cOrderDay = v);
+cBindSingle('grpWD', 'inWD', v => cWorkDay = v);
+
+(function() {
+  const grp = document.getElementById('grpCase');
+  grp.querySelectorAll('.cc-chip').forEach(c => {
+    c.addEventListener('click', () => {
+      c.classList.toggle('on');
+      const v = +c.dataset.v;
+      if (c.classList.contains('on')) { cCases.add(v); cActiveCase = v; }
+      else {
+        cCases.delete(v);
+        cActiveCase = [...cCases].sort((a,b)=>a-b).slice(-1)[0] || null;
+      }
+      if (cCases.size === 0) { c.classList.add('on'); cCases.add(v); cActiveCase = v; }
+      cRender();
+    });
+  });
+  const inp = document.getElementById('inCase');
+  inp.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const v = +inp.value;
+    if (v > 0 && !cCases.has(v)) {
+      cCases.add(v); cActiveCase = v;
+      const btn = document.createElement('button');
+      btn.className = 'cc-chip on'; btn.dataset.v = v; btn.textContent = v;
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('on');
+        if (btn.classList.contains('on')) { cCases.add(v); cActiveCase = v; }
+        else {
+          cCases.delete(v);
+          cActiveCase = [...cCases].sort((a,b)=>a-b).slice(-1)[0] || null;
+        }
+        if (cCases.size === 0) { btn.classList.add('on'); cCases.add(v); cActiveCase = v; }
+        cRender();
+      });
+      grp.insertBefore(btn, inp); inp.value = ''; cRender();
+    }
+  });
+})();
+
+function setCProd(p, el) {
+  cProd = p;
+  document.querySelectorAll('.cprod-tab').forEach(b => b.classList.remove('on'));
+  el.classList.add('on'); cRender();
+}
+function setCActiveCase(c) { cActiveCase = c; cRender(); }
+
+function cfmt(n) { return Math.round(n).toLocaleString('ko-KR'); }
+
+function cRender() {
+  const price = CPRICES[cProd];
+  const sigs  = CSIGS[cProd];
+  const sorted = [...cCases].sort((a,b) => a-b);
+  if (!cCases.has(cActiveCase)) cActiveCase = sorted[0];
+
+  document.getElementById('cbarTitle').textContent =
+    cProd === '175' ? '실리스칸정 175mg · 274원/정 · BID / TID'
+                    : '실리스칸정 350mg · 401원/정 · QD';
+  document.getElementById('cbarOD').textContent = 'Order ' + cOrderDay + '일';
+  document.getElementById('cbarWD').textContent = '영업 ' + cWorkDay + '일';
+
+  /* case tabs */
+  const tabs = document.getElementById('ccaseTabs');
+  tabs.innerHTML = '';
+  sorted.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'ccase-tab' + (c === cActiveCase ? ' on' : '');
+    btn.textContent = '하루 ' + c + '명';
+    btn.onclick = () => setCActiveCase(c);
+    tabs.appendChild(btn);
+  });
+
+  /* thead */
+  document.getElementById('ctheadRow').innerHTML = `
+    <th style="text-align:left">용법</th>
+    <th>약가</th>
+    <th>Order Day</th>
+    <th>하루 케이스</th>
+    <th>영업일수</th>
+    <th class="hl">총 처방 금액</th>
+  `;
+
+  /* tbody */
+  const tbody = document.getElementById('ctbody');
+  tbody.innerHTML = '';
+  if (!cActiveCase) return;
+
+  sigs.forEach(sig => {
+    const totalAmt = price * sig.mult * cOrderDay * cActiveCase * cWorkDay;
+    const sigCls = { QD: 'csig-qd', BID: 'csig-bid', TID: 'csig-tid' }[sig.code];
+    const tr = document.createElement('tr');
+    tr.dataset.sig = sig.code;
+    tr.innerHTML = `
+      <td><span class="csig ${sigCls}">${sig.label}</span> <span style="font-size:13px;color:#94a3b8;margin-left:4px">${sig.desc}</span></td>
+      <td>${cfmt(price)}<span style="font-size:11px;color:#94a3b8;margin-left:2px">원/정</span></td>
+      <td>${cOrderDay}<span style="font-size:11px;color:#94a3b8;margin-left:2px">일</span></td>
+      <td>${cActiveCase}<span style="font-size:11px;color:#94a3b8;margin-left:2px">명/일</span></td>
+      <td>${cWorkDay}<span style="font-size:11px;color:#94a3b8;margin-left:2px">일</span></td>
+      <td class="amt-col">${cfmt(totalAmt)}<span style="font-size:12px;font-weight:400;color:#93c5fd;margin-left:3px">원</span></td>
+    `;
+    tr.addEventListener('click', () => {
+      const wasSelected = tr.classList.contains('row-selected');
+      tbody.querySelectorAll('tr').forEach(r => r.classList.remove('row-selected'));
+      if (!wasSelected) tr.classList.add('row-selected');
+    });
+    tbody.appendChild(tr);
+  });
+
+  let hint = document.getElementById('cRowHint');
+  if (!hint) {
+    hint = document.createElement('div');
+    hint.id = 'cRowHint';
+    hint.className = 'row-hint';
+    hint.textContent = '✱ 행을 탭/클릭하면 선택(빨간 테두리)됩니다';
+    document.querySelector('.ctscroll').after(hint);
+  }
+
+  document.getElementById('cfoot').innerHTML = `
+    <span>약가 <b>${cfmt(price)}원/정</b></span>
+    <span>Order Day <b>${cOrderDay}일</b></span>
+    <span>하루 <b>${cActiveCase}명</b></span>
+    <span>영업일수 <b>${cWorkDay}일</b></span>
+    <span style="margin-left:auto;color:#cbd5e1;font-size:10px">총처방금액 = 약가 × 용법(정/일) × Order Day × 케이스수 × 영업일수</span>
+  `;
+
+  document.getElementById('calcNote').innerHTML = `
+    <strong>※ 산출식</strong> 총처방금액 = 약가 × 용법(정/일) × Order Day × 하루케이스(명) × 영업일수<br>
+    175mg: BID=1일2정, TID=1일3정 &nbsp;|&nbsp; 350mg: QD=1일1정 &nbsp;|&nbsp; 약가: 175mg=274원/정, 350mg=401원/정
+  `;
+}
+
+cRender();
+</script>
+</body>
+</html>
